@@ -4,9 +4,9 @@ Este es un proyecto creado con Laravel que integra React y Tailwind CSS para el 
 
 ## Tecnologías Utilizadas
 
-- **Laravel**: Framework de PHP para el desarrollo de aplicaciones web.
-- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
-- **Tailwind CSS**: Framework CSS para un diseño moderno y personalizable.
+- **Laravel**: Framework de PHP para el desarrollo de aplicaciones web.  (version 11)
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario. (version 18)
+- **Tailwind CSS**: Framework CSS para un diseño moderno y personalizable. (version 3)
 
 ## Requisitos
 
@@ -24,10 +24,12 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
    git clone https://github.com/janpilopez/LaravelwithReact
 
 2. Instala dependencias:
-    php composer install
-    npm install
 
-3. Configura tu proyecto de laravel y listo pon en marcha el servidor
+   php composer install
+   npm install
+
+4. Configura tu proyecto de laravel y listo pon en marcha el servidor
+
     php artisan serve
     npm run dev
 
