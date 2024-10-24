@@ -25,11 +25,13 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
 
 2. Instala dependencias:
 
-   php composer install
+   php composer install   
+
    npm install
 
 4. Configura tu proyecto de laravel y listo pon en marcha el servidor
 
-    php artisan serve
+    php artisan serve   
+
     npm run dev
 
