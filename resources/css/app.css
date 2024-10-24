@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav a{
+    margin: 10px;
+}
+nav a.active {
+    background-color: skyblue;
+    color: white;
+}
+
+h1 {
+    color: black;
+    size: 20px;
+}
