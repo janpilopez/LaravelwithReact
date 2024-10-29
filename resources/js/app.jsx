@@ -21,5 +21,6 @@ ReactDOM.createRoot(document.getElementById('app')).render(
     <BrowserRouter>
         <App/>
     </BrowserRouter>
+    //FORMA ANTIGUA DE REACT <REACT.STRICTMODE> Y <APP/>
 )
 // import './components/Example';

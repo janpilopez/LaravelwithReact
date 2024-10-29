@@ -1,7 +1,7 @@
 import React from 'react'
 import Router from '../router/Index'
 import { NavLink } from 'react-router-dom'
-
+//ESTRUCTUA DEL DOCUMENTO, BARRA DE NAVEGACION Y BODY
 const App = () => {
     return (
         <div>
