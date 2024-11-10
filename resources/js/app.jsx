@@ -15,7 +15,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter} from 'react-router-dom'
 
-
+//PAGINA PRINCIPAL DEL FRONTEND, UTILIZAMOS RENDERIZADO JSX, YA NO JS , EL BROSER ROUTE SE ENCARGA
+//DE RENDERIZAR TODAS LAS VISTAS, OSEA REACT
 import App from './components/App';
 ReactDOM.createRoot(document.getElementById('app')).render(
     <BrowserRouter>
