@@ -8,11 +8,13 @@ import Public from "../components/layouts/Public";
 import Admin from "../components/layouts/Admin";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Client from "../components/layouts/Client";
+import Login from "../components/pageauth/Login";
 //AQUI SE DEFINEN LAS RUTAS DE LA APLICACION EN REACT PARA QUE LUEGA PODAMOS LLAMARLAS
 const Index = () => {
     return (
          <Routes>
             <Route path="/" element={<Public />}>
+                <Route path="/login" element={<Login/>} />
                 <Route index element={<Home/>} />
                 {/* A CONTINUACION COMPONENTE PUBLICOS HEREDAN COMPONENTES DEL PADRE */}
                 <Route path="/about" element={<About />}>
