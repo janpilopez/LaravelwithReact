@@ -4,8 +4,9 @@ import AuthUser from "../components/pageauth/AuthUser";
 
 //AQUI SE DEFINEN LAS RUTAS PROTEGIDAS Y QUE USUARIOS TIENEN ACCESO A ELLAS
 const ProtectedRoutes = () => {
-    const {getToken} = AuthUser
-    if (!getToken) {
+    const { getToken } = AuthUser()
+    
+    if (!getToken ) {
         return <Navigate to={'/login'} />
     }
     return (
@@ -16,4 +17,4 @@ const ProtectedRoutes = () => {
     )
 }
 
-export default ProtectedRoutes
+export default ProtectedRoutes;

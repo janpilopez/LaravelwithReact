@@ -4,7 +4,6 @@ import Router from '../router/Index'
 const App = () => {
     return (
         <div>
-            <h1>Hola from React</h1>
             <Router/> {/* ESTAS SON LAS RUTAS, LAS CARGA, LAS REDIRECCIONA A SU COMPONENTE CORRESPONDIENTE */}
         </div>
     )

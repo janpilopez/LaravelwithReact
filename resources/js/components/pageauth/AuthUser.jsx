@@ -46,14 +46,15 @@ const AuthUser = () => {
             navigate('/client')
         }
 
-        const getLogout = () => {
-            // Propósito: Esta función se encarga de cerrar la sesión del usuario.
-            // Limpieza: Utiliza sessionStorage.clear() para eliminar todos los datos almacenados.
-            sessionStorage.clear()
-            navigate('/')
-        }
-
         
+        
+    }
+    
+    const getLogout = () => {
+        // Propósito: Esta función se encarga de cerrar la sesión del usuario.
+        // Limpieza: Utiliza sessionStorage.clear() para eliminar todos los datos almacenados.
+        sessionStorage.clear()
+        navigate('/')
     }
 
     return {
@@ -63,7 +64,8 @@ const AuthUser = () => {
         rol,
         getToken,
         getRol,
-        getUser
+        getUser,
+        getLogout
     }
 
 

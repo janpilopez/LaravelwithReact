@@ -29,7 +29,7 @@ class AuthController extends Controller
         $input['password'] = bcrypt($input['password']);
 
         $user = User::create($input);
-        $user->assignRole('user');
+        $user->assignRole('client');
         $response['success'] = true;
         $response['token'] = $user->createToken('app')->plainTextToken;
         return response()->json($response, 200);
@@ -56,11 +56,12 @@ class AuthController extends Controller
             $user = auth()->user();
             $user->hasRole('client');
             $response['token'] = $user->createToken('sesion')->plainTextToken;
+            $response['success'] = true;
+            $response['user'] = $user;
+            $response['message'] = 'Logueado';
         };
 
-        $response['token'] = $user->createToken('app')->plainTextToken;
-        $response['user'] = $user;
-        $response['success'] = true;
+        // $response['token'] = $user->createToken('app')->plainTextToken;
         return response()->json($response, 200);
     }
 
@@ -68,7 +69,8 @@ class AuthController extends Controller
     {
         $response['success'] =false;
         try {
-            auth()->user( )->tokens()->delete();
+            // auth()->user( )->tokens()->delete();
+            return response()->json('HOLA');
         } catch (Throwable $th) {
             return response()->json('HOLA');
         }
