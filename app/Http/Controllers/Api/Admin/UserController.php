@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -20,10 +21,17 @@ class UserController extends Controller
         return response()->json($data, 200);
     }
 
+    public function store()
+    {
+        
+    }
+
     public function update(Request $request, $id)
     {
         $data = User::find($id);
-        $data->fill($request);
+        $data->aprobado = $request->aprobado;
+        $data->name = $request->name ?? $data->name;
+        // $data->fill($request);
         $data->save();
         return response()->json($data, 200);
     }

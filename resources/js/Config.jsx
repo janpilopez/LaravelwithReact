@@ -21,12 +21,12 @@ export default {
     ),
     GetLogout: () => axios.post(`${base_api_url}/auth/logout`, {},
         { 
-            // headers: { 
-            //     'X-XSRF-TOKEN': '52|mbt8DPV2uCluQe1uaXWb5aRAjnBILiH9EbXXVamb13dbd3bd',
-            //     'laravel_session': "eyJpdiI6IjExMEFTSVNYOEZVS0NnN0prd0VzY1E9PSIsInZhbHVlIjoieGh4T1lPVHhseHZ4MTUrWHpXbUVHUzN2RWZxSkJzZ0UyTzJKYU8rNjMzazBSSlRabGU4RGJWaFlzdkwxeDc3UHNUazc3MnFwWDV0cDQ0eFFyQit2cStVUVppejBpeHNOenV3RTRGWU9JOWliVFJhaGxySXBVRHNCbFpFZHRDUW0iLCJtYWMiOiIxN2Y5OWE3MzA3ODhmNjgzMDliODcxN2E4ZjExOGEyZGI0NWJhNGZmOGEwYzU1NTQwNWQyYjkyMWFiYjUxZjdiIiwidGFnIjoiIn0%3D"
-            // },
             withCredentials: true
         },
-    )
+    ),
+    GetUserAll: () => axios.get(`${base_api_url}/admin/user`),
+    GetUserById: (id) => axios.get(`${base_api_url}/admin/user/${id}`),
+    GetUserUpdate: (data, id) => axios.put(`${base_api_url}/admin/user/${id}`, data),
+
 
 }

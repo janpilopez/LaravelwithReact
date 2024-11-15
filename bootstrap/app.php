@@ -13,9 +13,10 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //Middleware Sanctum
-        // $middleware->api();
+        $middleware->api();
         // $middleware->auth(); // Aplica autenticación a todas las rutas
         $middleware->web();  // Maneja sesiones y CSRF para rutas web
+        #TODO: habilitar API a consumo externos
         $middleware->statefulApi();
     })
     ->withExceptions(function (Exceptions $exceptions) {

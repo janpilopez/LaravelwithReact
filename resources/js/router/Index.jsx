@@ -12,6 +12,8 @@ import Login from "../components/pageauth/Login";
 import Register from "../components/pageauth/Register";
 import PanelAdmin from "../components/pageadmin/PanelAdmin";
 import PanelClient from "../components/pageclient/PanelClient";
+import UserAll from "../components/pageadmin/UserAll"
+import UserUpdate from "../components/pageadmin/UserUpdate"
 
 //AQUI SE DEFINEN LAS RUTAS DE LA APLICACION EN REACT PARA QUE LUEGA PODAMOS LLAMARLAS
 const Index = () => {
@@ -34,6 +36,9 @@ const Index = () => {
             <Route element={<ProtectedRoutes />}>
                 <Route path="/admin" element={<Admin />}>
                     <Route index element={<PanelAdmin/>} />
+                    <Route path="user" element={<UserAll/>}/> {/* ruta relativa es sin /, si se pone / es ruta absoluta, por consiguiente  todas las demas son relativas a partir de una ruta principal*/ }
+                    <Route path="user/edit/:id" element={<UserUpdate/>}/>
+                    
                 </Route>
                 <Route path="/client" element={<Client />}>
                     <Route index element={<PanelClient/>} />

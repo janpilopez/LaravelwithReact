@@ -14,3 +14,22 @@ h1 {
     color: black;
     size: 20px;
 }
+
+.card {
+    @apply bg-white shadow-sm rounded-lg overflow-hidden;
+}
+
+.card-content {
+    @apply text-lg font-semibold
+}
+
+table {
+    @apply w-full text-sm text-left
+}
+thead {
+    @apply uppercase bg-gray-500
+}
+
+table, th, td {
+    @apply border-solid border-2
+  }
