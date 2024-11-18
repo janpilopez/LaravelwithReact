@@ -28,6 +28,7 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        Log::info(json_encode($request));
         $data = User::find($id);
         $data->aprobado = $request->aprobado;
         $data->name = $request->name ?? $data->name;

@@ -27,7 +27,9 @@ const UserUpdate = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const data = { aprobado: aprobado };  // 'aprobado' es una variable que contiene el valor booleano
+        const data = { aprobado };  // 'aprobado' es una variable que contiene el valor booleano
+        // const data = { aprobado : aprobado };  //es lo mismo de arriba, verificar si se envia la propiedad
+
         await Config.GetUserUpdate( data, id)
         .then( ({data}) => {
 

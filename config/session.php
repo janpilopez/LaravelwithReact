@@ -34,7 +34,10 @@ return [
 
     'lifetime' => env('SESSION_LIFETIME', 120),
 
+    // 'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false),
+    //ELIMINAR LAS COOKIES CUANDO SE CIERRA EL NAVEGADOR, POR DEFECTO FALSE
     'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false),
+
 
     /*
     |--------------------------------------------------------------------------

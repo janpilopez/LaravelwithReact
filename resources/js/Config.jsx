@@ -24,9 +24,18 @@ export default {
             withCredentials: true
         },
     ),
+    //ROL ADMIN
     GetUserAll: () => axios.get(`${base_api_url}/admin/user`),
     GetUserById: (id) => axios.get(`${base_api_url}/admin/user/${id}`),
     GetUserUpdate: (data, id) => axios.put(`${base_api_url}/admin/user/${id}`, data),
+    
+    GetCategoriaAll: () => axios.get(`${base_api_url}/admin/categoria`),
+    GetCategoriaStore: (data) => axios.post(`${base_api_url}/admin/categoria`, data),
+    GetCategoriaById: (id) => axios.get(`${base_api_url}/admin/categoria/${id}`),
+    GetCategoriaUpdate: (data,id) => axios.put(`${base_api_url}/admin/categoria/${id}`, data),
+    GetCategoriaDeleteById: (id) => axios.delete(`${base_api_url}/admin/categoria/${id}`),
+
+
 
 
 }

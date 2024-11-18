@@ -1,23 +1,33 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
 import Config from "../../Config";
+import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 
-const UserAll = () => {
-    const [users, setUsers] = useState();
+const CategoriaAll = () => {
+    const [categorias, setCategorias] = useState();
 
     useEffect(() => {
-        const getUserAll = async () => {
-            const response = await Config.GetUserAll();
-            setUsers(response.data);
-        };
-        getUserAll();
+        _getCategoriaAll();
     }, []);
+
+    const _getCategoriaAll = async () => {
+        const response = await Config.GetCategoriaAll();
+        setCategorias(response.data);
+    }
+
+    const _deleteCategoriaById = async (id) => {
+        const isDelete = window.confirm('Borrar Categoria ?')
+        if (isDelete) {
+            await Config.GetCategoriaDeleteById(id);
+            _getCategoriaAll()
+        }
+    }
 
     return (
         <div className="flex-none">
             <Sidebar />
             <div className="w-full">
+                <Link to={'/admin/categoria/create'}>Crear Categoria</Link>
                 <div className="card w-4/5 m-auto">
                     <table>
                         <thead>
@@ -28,22 +38,25 @@ const UserAll = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {!users ? (
+                            {!categorias ? (
                                 <tr>
                                     <td colSpan="3">.... loading</td>
                                 </tr>
                             ) : (
-                                users.map((user) => {
+                                categorias.map((categoria) => {
                                     return (
-                                        <tr key={user.id}>
-                                            <td>{user.id}</td>
-                                            <td>{user.name}</td>
+                                        <tr key={categoria.id}>
+                                            <td>{categoria.orden}</td>
+                                            <td>{categoria.nombre}</td>
                                             <td>
                                                 <Link
-                                                    to={`/admin/user/edit/${user.id}`}
+                                                    to={`/admin/categoria/edit/${categoria.id}`}
                                                 >
                                                     Editar
                                                 </Link>
+                                                <button onClick={() => _deleteCategoriaById(categoria.id)}>
+                                                    Eliminar
+                                                </button>
                                             </td>
                                         </tr>
                                     );
@@ -57,4 +70,4 @@ const UserAll = () => {
     );
 };
 
-export default UserAll;
+export default CategoriaAll;
